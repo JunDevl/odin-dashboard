@@ -22,10 +22,11 @@ a:link {
 }
 
 li {
+  margin-left: 1rem;
   list-style: none;
 }
 
-p, h1, ul, li {
+p, h1, ul {
   margin: 0;
   padding: 0;
 }
@@ -58,8 +59,24 @@ button,
   justify-content: flex-start;
 }
 
+.dashboard {
+  margin-top: 1rem;
+  margin-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+.dashboard p {
+  font-size: 2rem;
+}
+
+li a {
+  color: var(--accent-white-color);
+  font-size: 1.5rem;
+}
+
 .dashboard, li {
   display: flex;
+  align-items: center;
   gap: 25px;
 }
 
@@ -67,8 +84,21 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  margin-top: 2rem;
-  gap: 10px;
+  margin-top: 3rem;
+  gap: 1rem;
+}
+
+ul li.icon {
+  color: var(--accent-white-color);
+}
+
+.icon:not(.dashboard-icon) {
+  width: 50px;
+}
+
+.icon.dashboard-icon {
+  width: 75px;
+  color: var(--accent-white-color);
 }
 
 .main {
@@ -100,7 +130,7 @@ input.searchbar {
   padding-left: 1rem;
   font-size: 1rem;
   background-color: var(--content-color);
-  border: 1px solid #d3d8dd;
+  border: 1px solid #bec6ce;
   border-radius: 15px;
 }
 
@@ -116,12 +146,12 @@ input.searchbar {
   grid-template-columns: 2fr 1fr;
 }
 
-.introduction {
+.introduction, .trending.card {
   display: flex;
   align-items: center;
 }
 
-.text {
+.text, .user-text {
   display: flex;
   flex-direction: column;
 }
@@ -129,7 +159,8 @@ input.searchbar {
 .buttons {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
+  gap: 3rem;
 }
 
 .content {
@@ -143,8 +174,8 @@ input.searchbar {
 
 .project-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 300px));
-  grid-template-rows: repeat(auto-fill, minmax(250px, 350px));
+  grid-template-columns: repeat(auto-fill, minmax(250px, 350px));
+  grid-template-rows: repeat(auto-fill, minmax(300px, 400px));
   gap: 1.5rem;
 }
 
@@ -154,26 +185,32 @@ input.searchbar {
 }
 
 .project.card {
+  position: relative;
   border-left: 13px solid #eeb539;
+  height: 16rem;
+}
+
+.project.card p {
+  max-height: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .project.icons {
-  display: flex;
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  display: inline flex;
   align-items: center;
-  justify-content: flex-end;
-  margin-top: 1rem;
   height: 3rem;
-  gap: 2rem;
+  gap: 1rem;
 }
 
-.announcements {
+.announcements, .trending-cards {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding: 1.5rem;
   background-color: var(--accent-white-color);
   border-radius: 13px;
 }
